@@ -39,5 +39,5 @@ function getDate() {
 }
 function postToSlack() {
     // place Slack API info here
-    console.log('I want to post to Slack');
+    console.log('I want to post to Slack!');
 }
