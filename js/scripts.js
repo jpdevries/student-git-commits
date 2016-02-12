@@ -1,5 +1,8 @@
 $(function() {
     getGitHub();
+    setInterval(function() {
+        window.location.reload();
+    }, (15 * 60000));
 });
 function makeAjaxRequest(url,request,dataType,type,done) {
     url = (typeof(url) == 'undefined') ? '//api.github.com/search/repositories' : url;
@@ -23,7 +26,7 @@ function makeAjaxRequest(url,request,dataType,type,done) {
         'jsonp',
         'GET',
         function(result) {
-            console.log(result.data, 'username search');
+            console.log(result.data);
             postToSlack();
         }
     );
