@@ -29,7 +29,7 @@ function makeAjaxRequest(url,request,dataType,type,done) {
 }
 function getDate() {
     var date = new Date();
-    var fifteen = new Date(date.getTime() - 15 * 60000).toISOString();
+    var fifteen = new Date(date.getTime() - (15 * 60000)).toISOString();
     console.log(fifteen);
     return fifteen;
 }
