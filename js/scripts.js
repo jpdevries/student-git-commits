@@ -24,6 +24,7 @@ function makeAjaxRequest(url,request,dataType,type,done) {
         'GET',
         function(result) {
             console.log(result.data, 'username search');
+            postToSlack();
         }
     );
 }
@@ -32,4 +33,8 @@ function getDate() {
     var fifteen = new Date(date.getTime() - (15 * 60000)).toISOString();
     console.log(fifteen);
     return fifteen;
+}
+function postToSlack() {
+    // place Slack API info here
+    console.log('I want to post to Slack');
 }
