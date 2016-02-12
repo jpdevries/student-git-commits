@@ -13,13 +13,12 @@ function makeAjaxRequest(url,request,dataType,type,done) {
         dataType:dataType,
         type:type
     }).done(done);
-}
-function getGitHub() {
-    getDate();
+}function getGitHub() {
+    var date = getDate();
     makeAjaxRequest(
         '//api.github.com/search/repositories',
         {
-            q: 'user:jstrother user:jpdevries pushed:' + date
+            q: 'user:jstrother user:jpdevries pushed:>' + date
         },
         'jsonp',
         'GET',
@@ -29,13 +28,8 @@ function getGitHub() {
     );
 }
 function getDate() {
-    var fifteenMinutes = new Date(new Date().getTime() - (15 * 1000 * 60));
-    var year = fifteenMinutes.getFullYear();
-    var month = fifteenMinutes.getMonth();
-    var day = fifteenMinutes.getDate();
-    var hours = fifteenMinutes.getHours();
-    var minutes = fifteenMinutes.getMinutes();
-    var seconds = fifteenMinutes.getSeconds();
-    var date = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes + ':' + seconds;
-    return date;
+    var date = new Date();
+    var fifteen = new Date(date.getTime() - 15 * 60000).toISOString();
+    console.log(fifteen);
+    return fifteen;
 }
