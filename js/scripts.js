@@ -38,6 +38,16 @@ function getDate() {
     return fifteen;
 }
 function postToSlack() {
-    // place Slack API info here
+    var request = {
+       client_id: '2442078175.21239169463',
+        client_secret: '72601d4bb84f530579d562d113a9acce',
+        code: '21240481911.21237684213.5004b2c3f6'
+    };
+    makeAjaxRequest(
+        'https://slack.com/api/oauth.access',
+        request,
+        'jsonp',
+        'GET'
+    );
     console.log('I want to post to Slack!');
 }
